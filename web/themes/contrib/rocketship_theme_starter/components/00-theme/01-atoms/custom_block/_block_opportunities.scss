@@ -1,0 +1,65 @@
+#block-blok-opportunites {
+  display: flex;
+  color: black;
+  background: white;
+  padding-bottom: 10vw;
+  padding-left: 20px;
+
+  .field--name-field-opportunities {
+    display: flex;
+    align-items: center;
+    .field--name-field-menu-opportunities {
+      @include headline2;
+      line-height: initial;
+      color: black;
+      padding-right: 7vw;
+      li::before {
+        font-weight: 100;
+        letter-spacing: 1px;
+        color: black;
+        content: "0" counter(listStyle1);
+      }
+    }
+    .field--name-field-slogan {
+      @include text2;
+      color: black;
+      margin-top: 128px;
+    }
+  }
+  @include max-bp-sm {
+    justify-content: center;
+  }
+}
+
+@include max-bp-sm {
+
+  .field--name-field-opportunities {
+    display: flex;
+    order: 2;
+  }
+
+  .field--name-field-image-our-work {
+    display: flex;
+    order: 1;
+    margin-bottom: 40px;
+  }
+
+  .field--name-field-slogan {
+    margin-top: 60px;
+  }
+
+  .post_container {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .field--type-image {
+    width: 240px;
+  }
+
+  .field--name-field-menu-opportunities {
+    width: 80vw;
+  }
+
+
+}

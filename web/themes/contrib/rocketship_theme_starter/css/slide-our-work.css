@@ -1,0 +1,10 @@
+#block-bloc-description-and-image .field__items--name-field-content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/*# sourceMappingURL=01-atoms/10-slide/slide-our-work.css.map */

@@ -1,0 +1,85 @@
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Header top
+// *
+// * Load all the styling + the structural CSS
+// * for the header top in the right order and breakpoints
+// * You can change breakpoints to have mobile styling for wider screens
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: only on mobile phone
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-xs-only {
+
+  //
+
+}
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: tablet & wider
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+@include bp-sm {
+
+  .header-top .container {
+    // display: flex;
+  }
+
+}
+.container-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 30px 20px;
+  @media(max-width: $bp-sm) {
+    z-index: 8;
+    top: 0;
+    flex-direction: row-reverse;
+    background-color: $color-black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .field--name-field-logo {
+    position: fixed;
+    @media(max-width: $bp-sm) {
+      display: none;}
+  }
+
+
+  // right button estimate ptoject
+  .field--name-field-estimate-ptoject {
+    a {
+      @include button-white-custom;
+    }
+  }
+
+  // mail
+  .block--type-mail {
+    position: fixed;
+    top: 95%;
+    left: 0;
+    padding: 5px;
+    color: white;
+    transform: rotate(270deg);
+    transform-origin: top left;
+    a {
+      @include text3;
+    }
+    @media(max-width: $bp-sm) {
+      position: relative;
+      left: 0;
+      transform: rotate(0deg);
+    }
+    @media(max-width: 450px) {
+      display: none;}
+  }
+
+
+}
+

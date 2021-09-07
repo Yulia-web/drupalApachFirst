@@ -1,0 +1,151 @@
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Tab
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// *
+// =============================================================================
+
+
+.tabs__link {
+  display: block;
+  padding: rem(10) rem($grid-gap-hor / 2);
+  border-top: 1px solid rgba($color-white, .4);
+  @include font-size(14, 18);
+  background-color: $color-tab-bg;
+
+  &,
+  &:visited {
+    color: $color-tab-text;
+    background-color: $color-tab-bg;
+  }
+
+  &:hover {
+    color: $color-tab-text;
+    background-color: $color-tab-bg-hover;
+  }
+
+  &.is-active {
+    color: $color-tab-text;
+    background-color: $color-tab-bg-active;
+  }
+}
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: tablet & wider
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-sm {
+
+  .tabs li {
+    display: inline-block;
+  }
+
+  .tabs__link {
+    display: inline-block;
+    border-top: 0 none;
+
+    &.is-active {
+      color: $color-tab-bg-hover;
+      background-color: $color-tab-bg-active-2;
+    }
+  }
+}
+
+@mixin header-burger {
+  position: fixed;
+  top: 50%;
+  display: block;
+  height: 20px;
+  width: 30px;
+  & span {
+    position: absolute;
+    top: 9px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #ffffff;
+    &:hover {
+      background-color: #9d9d9d;
+    }
+  }
+  &::before,
+  &::after {
+    position: absolute;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #ffffff;
+    content: "";
+    transition: all 0.4s ease-out;
+  }
+  &::before {
+    top: 0;
+  }
+  &::after {
+    bottom: 0;
+  }
+  @media(max-width: $bp-sm) {
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    top: 7%;
+  }
+}
+
+@mixin burger-open {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: -50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 5vw;
+  background-color: $color-light-gray;
+  margin-left: 52px;
+  margin-right: 5px;
+  transition: all 0.3s ease-out;
+
+  @include headline4;
+  ul {
+    line-height: 50px;
+    text-transform: uppercase;
+    li:hover {
+      border-bottom: 2px solid rgb(41, 124, 206);
+    }
+  }
+  @media(max-width: 1000px) {
+    width: 100vw;
+    @include headline3;
+  }
+
+  @media(max-width: $bp-sm) {
+    left: 0;
+    top: -50vw;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@include  max-bp-sm {
+  .f-nav {
+    z-index: 999;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    .header-burger {
+      top: 35%;
+    }
+    .open {
+      top: 7%;
+    }
+  }
+
+}

@@ -1,0 +1,102 @@
+#block-block-work-and-services {
+  display: flex;
+  align-items: center;
+  background-color: $color-light-black;
+  .paragraph--type-text-and-link {
+    padding-top: 140px;
+    padding-bottom: 140px;
+    z-index: 3;
+    @media(max-width: 500px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100vw;
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+  }
+  .field__items--name-field-block-right {
+    position: relative;
+    overflow: hidden;
+    .field--name-field-block-title,
+    .field--name-field-description-,
+    .field--name-field-link {
+      padding-left: 20%;
+    }
+    @media(max-width: 500px) {
+      padding-left: 0;
+      .field--name-field-block-title ,
+      .field--name-field-description- ,
+      .field--name-field-link {
+        padding-left: 0;
+      }
+    }
+  }
+
+  .field--name-field-block-left {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: flex-end;
+    padding-right: 12%;
+    @media(max-width: 500px) {
+      padding-right: 0;
+    }
+  }
+  .field--name-field-block-right {
+    flex: 1 1 auto;
+  }
+  .field--name-field-block-title {
+    font-size: 23.9799px;
+    font-weight: 300;
+    line-height: 32px;
+  }
+  .field--name-field-description- {
+    @include text3;
+    margin-top: 21px;
+  }
+  .field--name-field-link {
+    margin-top: 53px;
+    a {
+      @include little-text-link;
+    }
+  }
+
+  .field--name-field-background-image {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    width: 100%;
+    img {
+      width: 100%;
+      height: 450px;
+      border-style: none;
+      vertical-align: middle;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @media(max-width: 500px) {
+    flex-direction: column-reverse;
+    .field__items--name-field-block-right {
+      display: flex;
+      align-items: center;
+      width: 100vw;
+    }
+    .field__item--name-field-block-left {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+    }
+    .field--name-field-background-image {
+      z-index: -1;
+      top: 0;
+      width: 100vw;
+      height: 100%;
+      img {
+        height: 352px;
+      }
+    }
+  }
+}

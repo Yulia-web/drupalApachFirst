@@ -1,0 +1,150 @@
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Text
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// * Styling basic tags
+// =============================================================================
+
+mark,
+.marker,
+.highlight {
+  @include highlight;
+}
+
+small,
+.small {
+  @include small;
+}
+
+p,
+.p {
+  @include p;
+}
+
+
+// * Styling text in CKE
+// =============================================================================
+
+.text-long {
+
+  @include text-long;
+
+}
+
+//Project text
+//////////////////////////////////////////////////////////////////
+
+@mixin main-style-text {
+  font-style: normal;
+  font-weight: 300;
+  color: $color-white;
+}
+@mixin headline1 {
+  @include adaptiv-font(111,25,1440);
+  line-height: 115px;
+  letter-spacing: -0.06em;
+  @include main-style-text;
+  @media (max-width: 1050px) {
+    line-height: 62px;
+  }
+  @media (max-width: 600px) {
+    line-height: 42px;
+  }
+  @media (min-width: 1950px) {
+    line-height: 140px;
+  }
+  @media (min-width: 2400px) {
+    line-height: 190px;
+  }
+}
+
+@mixin headline2 {
+  @include adaptiv-font(80.4416,25,1440);
+  letter-spacing: -0.04em;
+  @include main-style-text;
+  @media (max-width: 1000px) {
+    line-height: 80px;
+  }
+  @media (min-width: 1000px) {
+    line-height: 77px;
+  }
+  @media (min-width: 1539px) {
+    line-height: 95px;
+  }
+  @media (min-width: 2000px) {
+    line-height: 139px;
+  }
+  @media (min-width: 3000px) {
+    line-height: 170px;
+  }
+
+}
+
+@mixin headline3 {
+  @include adaptiv-font(47,18,1440);
+  line-height: 54px;
+  @include main-style-text;
+  @media (max-width: 660px) {
+    line-height: 29px;
+  }
+  @media (min-width: 1660px) {
+    line-height: 85px;
+  }
+}
+
+@mixin headline4 {
+  @include adaptiv-font(27.8673,12,1440);
+  line-height: 36px;
+  @include main-style-text;
+  @media (min-width: 2100px) {
+    line-height: 50px;
+  }
+}
+
+@mixin caption1 {
+  font-size: 12px;
+  line-height: 17px;
+  letter-spacing: 0.02em;
+  @include main-style-text;
+}
+
+@mixin caption2 {
+  font-size: 12px;
+  line-height: 17px;
+  letter-spacing: -0.05em;
+  @include main-style-text;
+}
+
+@mixin text2 {
+  font-size: 18px;
+  line-height: 27px;
+  @include main-style-text;
+
+}
+@mixin text3 {
+  @include main-style-text;
+  @include adaptiv-font(14.405,12,1440);
+  line-height: 20px;
+}
+@mixin text4 {
+  font-size: 12.4045px;
+  line-height: 17px;
+  @include main-style-text;
+}
+@mixin text5 {
+  @include main-style-text;
+  font-size: 13.1538px;
+  line-height: 18px;
+}
+
+@mixin adaptiv-font($pcSize, $mobSize,$maxWidth) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+.header__section--secondary {
+  display: none;
+}

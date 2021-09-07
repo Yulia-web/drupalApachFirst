@@ -1,0 +1,113 @@
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * main structure
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// * General
+// =============================================================================
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+
+// * Containers
+// =============================================================================
+
+// ** max-width container
+
+.container {
+  //@include max-width;
+  float: right !important;
+  width: 100vw !important;
+  padding-left: 70px;
+  @media(max-width: $bp-sm) {
+    padding-left: 0;}
+  //-- reset inside
+
+  .container {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+// ** fluid container
+
+.container--fluid {
+  padding-left: rem($container-padding);
+  padding-right: rem($container-padding);
+
+  .container {
+    padding: 0;
+  }
+}
+
+
+// * Page
+// =============================================================================
+
+// this wrapper is only used for the fixed footer
+// but also has a use to prevent vertical scrollbar
+// downside: seems to create a second scrollbar, so don't use overflow on this
+// until another solution is found
+.page-wrapper {
+  // overflow-x: hidden;
+  // overflow-y: auto;
+}
+
+// ** trying this to avoid the scrollbar, instead of putting it on page-wrapper
+//      remove if it breaks scroll somewhere
+.page {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+
+// * Sidebars
+// =============================================================================
+
+.view-display-id-page_1 {
+  display: none;
+}
+
+.post_container {
+  position: relative;
+  display: flex;
+  width: 70vw;
+  margin-left: 25vw;
+  @media(max-width: 1100px) {
+    margin-right: 20px;
+    margin-left: 10vw;
+  }
+  @include max-bp-sm {
+    flex-direction: column;
+    margin-left: 40px;
+    .field--type-image {
+      width: 60vw;
+    }
+  }
+}
+
+.block_container {
+  width: 80vw;
+  margin-left: 25vw;
+  @include max-bp-sm {
+    margin-left: 20px;
+
+    .field--type-image {
+      width: 80vw;
+    }
+  }
+}

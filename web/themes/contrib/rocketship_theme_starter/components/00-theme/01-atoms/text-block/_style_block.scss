@@ -1,0 +1,30 @@
+.block--type-what-we-do {
+  background-color: $color-white;
+  padding-top: 137px;
+  padding-bottom: 137px;
+
+  @include max-bp-md {
+    padding-top: 57px;
+    padding-bottom: 57px;
+    margin-top: 20px;
+  }
+
+  .field-title-what-we-do {
+    @include caption1;
+    display: flex;
+    justify-content: flex-start;
+    //width: 63vw;
+    color: $color-black;
+    text-transform: uppercase;
+
+  }
+  .field-contents {
+    @include headline3;
+    width: 63vw;
+    color: $color-black;
+    padding-top: 55px;
+    @include max-bp-sm {
+      width: 90vw;
+    }
+  }
+}

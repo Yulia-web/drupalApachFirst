@@ -1,0 +1,103 @@
+.block--type-blok-slider-top {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-right: 10vw;
+  padding-bottom: 12vh;
+
+  .field-title-header {
+    @include headline1;
+    margin-top: 100px;
+    @media (max-width: 835px) {
+      padding-right: 0;
+    }
+  }
+  .field--name-field-subtitle {
+    @include text3;
+    margin-top: 5vh;
+    padding-left: 30px;
+    @media (max-width: 835px) {
+      margin-top: 2vh;
+    }
+    @media (min-width: 2300px) {
+      line-height: 35px;
+    }
+  }
+
+  // button link estimate-ptoject
+  .field-estimate-ptoject {
+    display: flex;
+    justify-content: flex-end;
+    a {
+      @include button-white-custom;
+    }
+  }
+  // button link see-what-we-do
+  .field--name-field-button-see-what-we-do {
+    margin-top: 30px;
+    padding-left: 30px;
+    a {
+      @include button-white-custom;
+    }
+  }
+
+  .paragraph--type-left-and-right-arrow-button {
+    display: flex;
+    padding-top: 30px;
+    padding-left: 30px;
+    .field-left-arrow-button {
+      @include arrow-button;
+    }
+    .field-right-arrow-button {
+      @include arrow-button;
+      margin-left: 10px;
+    }
+  }
+
+  .slick-arrow {
+    position: absolute;
+    @include arrow-button;
+    top: 96%;
+    left: 0;
+  }
+
+  .arrow-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 120px;
+  }
+
+  .arrow-prev {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25px;
+  }
+
+  .slick-slider {
+    width: 62vw;
+    padding-bottom: 106px;
+  }
+
+  .fa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+  }
+}
+.field__items--name-field-slider {
+  min-width: 0;
+}
+.field--name-field-slider {
+  display: flex;
+  justify-content: flex-end;
+}
+.slick-list {
+  overflow: hidden;
+}
+.slick-track {
+  display: flex;
+}

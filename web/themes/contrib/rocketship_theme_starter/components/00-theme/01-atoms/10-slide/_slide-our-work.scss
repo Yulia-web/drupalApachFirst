@@ -1,0 +1,73 @@
+#block-bloc-description-and-image {
+  position: relative;
+  .field__items--name-field-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 15px;
+
+    @include max-bp-sm {
+      flex-wrap: wrap-reverse;
+      justify-content: center;
+      .field-image-our-work {
+        display: flex;
+        justify-content: flex-end;
+        width: 100vw;
+      }
+      .field--type-image {
+        img {
+          width: 300px;
+          height: 400px;
+        }
+      }
+    }
+
+    .paragraph--type-paragraph-our-work {
+      margin-right: 10vw;
+
+      .field--name-field-title {
+        @include headline2;
+        @include max-bp-lg {
+          margin-right: 0;
+        }
+      }
+
+      .field-subtitle-our-work {
+        @include caption1;
+        margin-top: 114px;
+        @include max-bp-lg {
+          margin-top: 34px;
+        }
+      }
+
+      .field--name-field-description {
+        @include headline4;
+        margin-top: 17px;
+      }
+
+      .field--name-field-tag {
+        a {
+          @include text5;
+        }
+        margin-top: 43px;
+      }
+
+      .field--name-field-button-right {
+        @include orange-button;
+        margin-top: 44px;
+      }
+    }
+
+    .field-image-our-work {
+      background-color: $color-orange;
+    }
+  }
+
+  .fa-long-arrow-right {
+    @include orange-button;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+  }
+}

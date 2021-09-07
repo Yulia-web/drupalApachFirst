@@ -1,0 +1,38 @@
+#block-interested {
+  display: flex;
+  background-color: $color-light-gray;
+  padding-top: 137px;
+  padding-bottom: 113px;
+  @include max-bp-sm {
+    justify-content: center;
+  }
+  .field--name-field-description-block {
+    margin-left: 59px;
+    .field--name-field-block-title {
+      @include headline2;
+      color: black;
+      @media(max-width: 637px) {
+        line-height: 55px;
+      }
+    }
+
+    .field--name-field-link {
+      margin-top: 52px;
+      a {
+        @include big-text-link;
+        border-bottom: 2px solid black;
+        color: black;
+      }
+    }
+
+    @include max-bp-sm {
+      margin-left: 0;
+      .field--name-field-image-block {
+        .field--type-image {
+          width: 60vw;
+        }
+      }
+    }
+  }
+}
+

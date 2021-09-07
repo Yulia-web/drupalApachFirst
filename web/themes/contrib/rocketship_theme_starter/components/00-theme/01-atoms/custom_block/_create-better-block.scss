@@ -1,0 +1,56 @@
+#block-creating-better {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding-top: 60px;
+  padding-bottom: 328px;
+
+  .paragraph--type-text-and-link {
+    width: 30vw;
+    margin-left: 148px;
+    .field--name-field-block-title {
+      @include headline3;
+    }
+    .field--name-field-description- {
+      @include text2;
+      margin-top: 27px;
+    }
+    .field--name-field-link {
+      margin-top: 51px;
+      a {
+        @include big-text-link;
+      }
+    }
+  }
+  .field--name-field-description-block {
+    display: flex;
+    align-items: flex-end;
+  }
+  @media(max-width: 1050px) {
+    .paragraph--type-text-and-link {
+      margin-left: 74px;
+    }
+  }
+  @include max-bp-sm {
+    .paragraph--type-text-and-link {
+      width: 100vw;
+      margin-left: 23px;
+      padding-right: 25px;
+    }
+    .field--image {
+      width: 400px;
+      padding-bottom: 35px;
+    }
+    .post_container {
+      flex-direction: column;
+      align-items: center;
+    }
+    padding-bottom: 90px;
+  }
+  @media(max-width: 600px) {
+    .field--image {
+      width: 240px;
+    }
+  }
+}

@@ -1,0 +1,241 @@
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Buttons (in forms and text)
+// *
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// * Preset classes
+// =============================================================================
+
+// primary button styling is added to the '.button' class
+// and various versions of form submits and form buttons
+// you are responsible for making sure 'submit' buttons get the correct styling
+// you can modify the $buttons-list variable with extra elements
+// or add more classes here
+
+.button,
+#{$buttons-list} {
+  @include button-primary();
+}
+
+.button--secondary {
+  @include button-secondary();
+}
+
+.button--negative {
+  @include button-negative();
+}
+
+.button--negative-secondary {
+  @include button-negative-secondary();
+}
+
+[id*="edit-cancel"],
+[id*="edit-delete"] {
+  @include button-secondary();
+}
+
+.button--sm {
+  @include button-size("sm");
+}
+
+.button--md {
+  @include button-size("md");
+}
+
+.button--lg {
+  @include button-size("lg");
+}
+
+
+// * Grouping of buttons
+// =============================================================================
+
+// eg. on 403 page
+
+.actions {
+
+  margin-top: rem(10);
+
+  .actions__divider,
+  .button {
+    display: block;
+    margin-top: rem(10);
+  }
+
+  .actions__divider {
+    text-align: center;
+  }
+
+  @include bp-sm {
+
+    margin-top: rem(10);
+    margin-left: rem(-10);
+
+    .actions__divider {
+      text-align: left;
+    }
+
+    .actions__divider,
+    .button {
+      display: inline-block;
+      margin-left: rem(10);
+    }
+  }
+}
+
+
+// * Buttons in CKE
+// =============================================================================
+
+.text-long,
+.cke_editable {
+
+  .cke-button {
+    @include button-primary();
+  }
+
+  .cke-button--secondary {
+    @include button-secondary();
+  }
+
+  // grouping
+  p {
+
+    .actions__divider {
+      margin-right: rem(10);
+    }
+
+    .cke-button {
+      margin-top: rem(10);
+      margin-right: rem(10);
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      // don't forget to override any styling that might be inherited
+      // by the link stylin in atoms/links
+      &::before,
+      &::after {
+        display: none;
+      }
+
+      border-bottom: 0 none;
+    }
+
+    .cke-button--secondary {
+      margin-top: rem(10);
+      margin-right: rem(10);
+      &:last-child {
+        margin-right: 0;
+      }
+
+      // don't forget to override any styling that might be inherited
+      // by the link stylin in atoms/links
+      &::before,
+      &::after {
+        display: none;
+      }
+
+      border-bottom: 0 none;
+    }
+  }
+}
+// Project button
+////////////////////////////////////////////////////////////////////
+
+@mixin button-white-custom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  width: 137px;
+  @include adaptiv-font(10,9,1440);
+  font-weight: 300;
+  line-height: 0px;
+  color: $color-black-custom;
+  background-color: $color-white;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+  &:hover {
+    border: 2px solid $color-white;
+    color: $color-white;
+    background: none;
+  }
+  @media(min-width: 2300px) {
+    width: 240px;
+    height: 50px;
+    font-size: 15px;
+  }
+}
+
+@mixin  big-text-link {
+  border-bottom: 1px solid rgb(251, 251, 251);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 27px;
+  color: $color-white;
+  font-style: normal;
+  padding-bottom: 1px;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+  &:hover {
+    border-bottom: none;
+    text-decoration: none;
+  }
+}
+
+@mixin  little-text-link {
+  width: 96px;
+  border-bottom: 1px solid rgb(191, 195, 199);
+  font-size: 14.1049px;
+  line-height: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #ecedf0;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+  &:hover {
+    border-bottom: none;
+  }
+}
+
+@mixin arrow-button {
+  box-sizing: border-box;
+  height: 60px;
+  width: 60px;
+  border: 0.2px solid $color-white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+  &:hover {
+    color: $color-black;
+    background-color: $color-white;
+  }
+  @media(min-width: 2000px) {
+    height: 75px;
+    width: 75px;
+  }
+}
+
+@mixin orange-button {
+  box-sizing: border-box;
+  height: 41px;
+  width: 41px;
+  border-radius: 50%;
+  color: $color-white;
+  background-color: $color-orange;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+  &:hover {
+    box-shadow: 1px 0px 0px 12px rgba(238, 101, 43, 0.3);
+  }
+  @media(min-width: 2000px) {
+    width: 55px;
+    height: 55px;
+  }
+}
